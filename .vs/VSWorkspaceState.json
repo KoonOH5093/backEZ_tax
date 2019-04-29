@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\APIMango",
+    "\\APIMango\\config",
+    "\\APIMango\\controllers",
+    "\\APIMango\\models",
+    "\\APIMango\\routes"
+  ],
+  "SelectedNode": "\\APIMango\\config\\db.js",
+  "PreviewInSolutionExplorer": false
+}
