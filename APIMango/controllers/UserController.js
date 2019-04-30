@@ -66,9 +66,10 @@ module.exports = {
         });
     },
     //ดึงโดยใช้id
-    getUserByEmail: function (req, res, next) {
-        const queryuser = { email: req.params.email };
-        User.findById(queryuser, function (err, user) {
+    getUserByEmailandPass: function (req, res, next) {
+        const queryuserE = { email: req.body.email, password: req.body.password};
+        console.log(queryuserE);
+        User.find(queryuserE, function (err, user) {
             if (err) {
                 console.log(err);
             } else {
@@ -99,7 +100,7 @@ module.exports = {
         edituser.mPension = req.body.mPension;
         edituser.mDstudy = req.body.mDstudy;
         edituser.mDonate = req.body.mDonate;
-        const query = { _id: req.params.id }
+        const query = { email: req.params.email }
         User.update(query, edituser, function (err) {
             if (err) {
                 res.send(err);
