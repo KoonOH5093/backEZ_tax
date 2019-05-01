@@ -134,8 +134,8 @@ module.exports = {
         });
     },
     //ลบรายการ
-    deleteUserByEmail: function (req, res, next) {
-        const query_user = { email: req.params.email };
+    deleteUserByID: function (req, res, next) {
+        const query_user = { _id: req.params._id };
         User.remove(query_user, function (err, user) {
             if (err) {
                 console.log(err);
