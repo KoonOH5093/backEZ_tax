@@ -91,77 +91,39 @@ module.exports = {
     //แก้ไขรายการ
     editUser: function (req, res, next) {
         var edituser = {};
-<<<<<<< HEAD
-        edituser.email = req.body.email;
-        edituser.password = req.body.password;
-        edituser.name = req.body.name;
-        edituser.salary = req.body.salary;
-        edituser.bonus = req.body.bonus;
-        edituser.income = req.body.income;
-        edituser.status = req.body.status;
-        edituser.nChildB2561 = req.body.nChildB2561;
-        edituser.nChildA2561 = req.body.nChildA2561;
-        edituser.nProtege = req.body.nProtege;
-        edituser.nParent = req.body.nParent;
-        edituser.nParentS = req.body.nParentS;
-        edituser.nDisabled = req.body.nDisabled;
-        edituser.mSocial = req.body.mSocial;
-        edituser.mGPF = req.body.mGPF;
-        edituser.mHomeloan = req.body.mHomeloan;
-        edituser.mRMF = req.body.mRMF;
-        edituser.mLTF = req.body.mLTF;
-        edituser.mLife = req.body.mLife;
-        edituser.mPension = req.body.mPension;
-        edituser.mDstudy = req.body.mDstudy;
-        edituser.mDonate = req.body.mDonate;
-        edituser.mYear = req.body.mYear;
-        edituser.mNetB = req.body.mNetB;
-        edituser.taxB = req.body.taxB;
-        edituser.mSpouse = req.body.mSpouse;
-        edituser.mChild = req.body.mChild;
-        edituser.mParent = req.body.mParent;
-        edituser.mDisabled = req.body.mDisabled;
-        edituser.mNetA = req.body.mNetA;
-        edituser.mNetAD = req.body.mNetAD;
-     
+        if (req.body.email != null) edituser.email = req.body.email;
+        if (req.body.salary != null) edituser.salary = req.body.salary;
+        if (req.body.bonus != null) edituser.bonus = req.body.bonus;
+        if (req.body.income != null) edituser.income = req.body.income;
+        if (req.body.status != null) edituser.status = req.body.status;
+        if (req.body.nChildB2561 != null) edituser.nChildB2561 = req.body.nChildB2561;
+        if (req.body.nChildA2561 != null) edituser.nChildA2561 = req.body.nChildA2561;
+        if (req.body.nProtege != null) edituser.nProtege = req.body.nProtege;
+        if (req.body.nParent != null) edituser.nParent = req.body.nParent;
+        if (req.body.nParentS != null) edituser.nParentS = req.body.nParentS;
+        if (req.body.nDisabled != null) edituser.nDisabled = req.body.nDisabled;
+        if (req.body.mSocial != null) edituser.mSocial = req.body.mSocial;
+        if (req.body.mGPF != null) edituser.mGPF = req.body.mGPF;
+        if (req.body.mHomeloan != null) edituser.mHomeloan = req.body.mHomeloan;
+        if (req.body.mRMF != null) edituser.mRMF = req.body.mRMF;
+        if (req.body.mLTF != null) edituser.mLTF = req.body.mLTF;
+        if (req.body.mLife != null) edituser.mLife = req.body.mLife;
+        if (req.body.mPension != null) edituser.mPension = req.body.mPension;
+        if (req.body.mDstudy != null) edituser.mDstudy = req.body.mDstudy;
+        if (req.body.mDonate != null) edituser.mDonate = req.body.mDonate;
+        if (req.body.mYear != null) edituser.mYear = req.body.mYear;
+        if (req.body.mNetB != null) edituser.mNetB = req.body.mNetB;
+        if (req.body.taxB != null) edituser.taxB = req.body.taxB;
+        if (req.body.mSpouse != null) edituser.mSpouse = req.body.mSpouse;
+        if (req.body.mChild != null) edituser.mChild = req.body.mChild;
+        if (req.body.mParent != null) edituser.mParent = req.body.mParent;
+        if (req.body.mDisabled != null) edituser.mDisabled = req.body.mDisabled;
+        if (req.body.mNetA != null) edituser.mNetA = req.body.mNetA;
+        if (req.body.mNetAD != null) edituser.mNetAD = req.body.mNetAD;
+
         const query = { email: req.body.email };
-        console.log(edituser,query);
-        User.update(query, edituser, function (err) {
-=======
-        if(req.body.email != null)edituser.email = req.body.email;
-        if(req.body.salary != null)edituser.salary = req.body.salary;
-        if(req.body.bonus != null)edituser.bonus = req.body.bonus;
-        if(req.body.income != null)edituser.income = req.body.income;
-        if(req.body.status!= null)edituser.status = req.body.status;
-        if(req.body.nChildB2561 != null)edituser.nChildB2561 = req.body.nChildB2561;
-        if(req.body.nChildA2561 != null)edituser.nChildA2561 = req.body.nChildA2561;
-        if(req.body.nProtege != null)edituser.nProtege = req.body.nProtege;
-        if(req.body.nParent != null) edituser.nParent = req.body.nParent;
-        if(req.body.nParentS != null) edituser.nParentS = req.body.nParentS;
-        if(req.body.nDisabled != null)edituser.nDisabled = req.body.nDisabled;
-        if(req.body.mSocial != null)edituser.mSocial = req.body.mSocial;
-        if(req.body.mGPF != null)edituser.mGPF = req.body.mGPF;
-        if(req.body.mHomeloan != null)edituser.mHomeloan = req.body.mHomeloan;
-        if(req.body.mRMF != null)edituser.mRMF = req.body.mRMF;
-        if(req.body.mLTF != null)edituser.mLTF = req.body.mLTF;
-        if(req.body.mLife != null)edituser.mLife = req.body.mLife;
-        if(req.body.mPension != null)edituser.mPension = req.body.mPension;
-        if(req.body.mDstudy != null)edituser.mDstudy = req.body.mDstudy;
-        if(req.body.mDonate != null)edituser.mDonate = req.body.mDonate;
-        if(req.body.mYear != null)edituser.mYear = req.body.mYear;
-        if(req.body.mNetB != null)edituser.mNetB = req.body.mNetB;
-        if(req.body.taxB != null)edituser.taxB = req.body.taxB;
-        if(req.body.mSpouse != null)edituser.mSpouse = req.body.mSpouse;
-        if(req.body.mChild != null)edituser.mChild = req.body.mChild;
-        if(req.body.mParent != null)edituser.mParent = req.body.mParent;
-        if(req.body.mDisabled != null)edituser.mDisabled = req.body.mDisabled;
-        if(req.body.mNetA != null)edituser.mNetA = req.body.mNetA;
-        if(req.body.mNetAD != null)edituser.mNetAD = req.body.mNetAD;
-     
-        const query = { email: req.body.email };
-        console.log(edituser,query);
+        console.log(edituser, query, req.body.mNetA);
         User.updateMany(query, edituser, function (err) {
->>>>>>> 9f44e00d00abd769dd941fbacabec6a50fbbe46c
             if (err) {
                 res.send(err);
                 return;
