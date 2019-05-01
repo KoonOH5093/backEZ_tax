@@ -33,6 +33,8 @@ module.exports = {
             nChildB2561: req.body.nChildB2561,
             nChildA2561: req.body.nChildA2561,
             nProtege: req.body.nProtege,
+            nParent: req.body.nParent,
+            nParentS: req.body.nParentS,
             nDisabled: req.body.nDisabled,
             mSocial: req.body.mSocial,
             mGPF: req.body.mGPF,
@@ -42,7 +44,16 @@ module.exports = {
             mLife: req.body.mLife,
             mPension: req.body.mPension,
             mDstudy: req.body.mDstudy,
-            mDonate: req.body.mDonate
+            mDonate: req.body.mDonate,
+            mYear: req.body.mYear,
+            mNetB: req.body.mNetB,
+            taxB: req.body.taxB,
+            mSpouse: req.body.mSpouse,
+            mChild: req.body.mChild,
+            mParent: req.body.mParent,
+            mDisabled: req.body.mDisabled,
+            mNetA: req.body.mNetA,
+            mNetAD: req.body.mNetAD
         });
         adduser.save(function (err){
             if (err) {
@@ -79,7 +90,7 @@ module.exports = {
     },
     //แก้ไขรายการ
     editUser: function (req, res, next) {
-        const edituser = {};
+        var edituser = {};
         edituser.email = req.body.email;
         edituser.password = req.body.password;
         edituser.name = req.body.name;
@@ -90,6 +101,8 @@ module.exports = {
         edituser.nChildB2561 = req.body.nChildB2561;
         edituser.nChildA2561 = req.body.nChildA2561;
         edituser.nProtege = req.body.nProtege;
+        edituser.nParent = req.body.nParent;
+        edituser.nParentS = req.body.nParentS;
         edituser.nDisabled = req.body.nDisabled;
         edituser.mSocial = req.body.mSocial;
         edituser.mGPF = req.body.mGPF;
@@ -100,7 +113,18 @@ module.exports = {
         edituser.mPension = req.body.mPension;
         edituser.mDstudy = req.body.mDstudy;
         edituser.mDonate = req.body.mDonate;
-        const query = { email: req.params.email }
+        edituser.mYear = req.body.mYear;
+        edituser.mNetB = req.body.mNetB;
+        edituser.taxB = req.body.taxB;
+        edituser.mSpouse = req.body.mSpouse;
+        edituser.mChild = req.body.mChild;
+        edituser.mParent = req.body.mParent;
+        edituser.mDisabled = req.body.mDisabled;
+        edituser.mNetA = req.body.mNetA;
+        edituser.mNetAD = req.body.mNetAD;
+     
+        const query = { email: req.body.email };
+        console.log(edituser,query);
         User.update(query, edituser, function (err) {
             if (err) {
                 res.send(err);

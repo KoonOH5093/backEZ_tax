@@ -10,6 +10,8 @@ var UserSchema = mongoose.Schema({
     nChildB2561: { type: Number, required: true },
     nChildA2561: { type: Number, required: true },
     nProtege: { type: Number, required: true },
+    nParent: { type: Number, required: true },
+    nParentS: { type: Number, required: true },
     nDisabled: { type: Number, required: true },
     mSocial: { type: Number, required: true },
     mGPF: { type: Number, required: true },
@@ -19,7 +21,16 @@ var UserSchema = mongoose.Schema({
     mLife: { type: Number, required: true },
     mPension: { type: Number, required: true },
     mDstudy: { type: Number, required: true },
-    mDonate: { type: Number, required: true }
+    mDonate: { type: Number, required: true },
+    mYear:{ type: Number, required: true },
+    mNetB:{ type: Number, required: true },
+    taxB:{ type: Number, required: true },
+    mSpouse:{ type: Number, required: true },
+    mChild:{ type: Number, required: true },
+    mParent:{ type: Number, required: true },
+    mDisabled:{ type: Number, required: true },
+    mNetA:{ type: Number, required: true },
+    mNetAD:{ type: Number, required: true }
 }, { collection: 'users' }
 );
 module.exports = mongoose.model('User', UserSchema);
