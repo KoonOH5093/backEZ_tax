@@ -135,7 +135,8 @@ module.exports = {
     },
     //ลบรายการ
     deleteUserByID: function (req, res, next) {
-        const query_user = { _id: req.params._id };
+        const query_user = { _id: req.body._id };
+        console.log(query_user);
         User.remove(query_user, function (err, user) {
             if (err) {
                 console.log(err);
